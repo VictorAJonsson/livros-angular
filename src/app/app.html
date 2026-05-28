@@ -1,31 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-  <div class="container-fluid">
-
-    <a class="navbar-brand">
+  <div class="container-fluid page-container">
+    <a class="navbar-brand" routerLink="/lista">
+      <i class="bi bi-book-half me-2"></i>
       Sistema de Livros
     </a>
 
-    <div class="navbar-nav">
-
-      <a
-        class="nav-link"
-        routerLink="/lista"
-      >
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" routerLink="/lista">
+        <i class="bi bi-journal-text me-1"></i>
         Lista de Livros
       </a>
 
-      <a
-        class="nav-link"
-        routerLink="/dados"
-      >
+      <a class="nav-link" routerLink="/dados">
+        <i class="bi bi-plus-circle me-1"></i>
         Novo Livro
       </a>
-
     </div>
-
   </div>
-
 </nav>
 
 <router-outlet></router-outlet>

@@ -9,11 +9,7 @@ import { LivroDados } from './livro-dados/livro-dados';
 
 @NgModule({
   declarations: [App, LivroLista, LivroDados],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

@@ -5,27 +5,25 @@ import { LivroLista } from './livro-lista/livro-lista';
 import { LivroDados } from './livro-dados/livro-dados';
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: '/lista',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 
   {
     path: 'lista',
-    component: LivroLista
+    component: LivroLista,
   },
 
   {
     path: 'dados',
-    component: LivroDados
-  }
-
+    component: LivroDados,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

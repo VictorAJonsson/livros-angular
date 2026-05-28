@@ -14,7 +14,6 @@ import { ControleEditora } from '../controle-editora';
   styleUrl: './livro-dados.css',
 })
 export class LivroDados implements OnInit {
-
   livro: Livro = new Livro();
 
   autores: string = '';
@@ -24,21 +23,18 @@ export class LivroDados implements OnInit {
   constructor(
     private servLivros: ControleLivros,
     private servEditora: ControleEditora,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
-
     this.editoras = this.servEditora.getEditoras();
   }
 
   incluir = (): void => {
-
-    this.livro.autores = this.autores
-      .split('\n');
+    this.livro.autores = this.autores.split('\n');
 
     this.servLivros.incluir(this.livro);
 
     this.router.navigate(['/lista']);
-  }
+  };
 }
