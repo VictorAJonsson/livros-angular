@@ -20,6 +20,8 @@ export class LivroDados implements OnInit {
 
   editoras: Array<Editora> = [];
 
+  mensagemErro: string = '';
+
   constructor(
     private servLivros: ControleLivros,
     private servEditora: ControleEditora,
@@ -31,9 +33,20 @@ export class LivroDados implements OnInit {
   }
 
   incluir = (): void => {
-    this.livro.autores = this.autores.split('\n');
+    if (!this.livro.titulo.trim()) {
+      this.mensagemErro = 'O título do livro é obrigatório.';
+      return;
+    }
 
-    this.servLivros.incluir(this.livro);
+    this.mensagemErro = '';
+
+    this.livro.autores = this.autores.split('\n').filter((autor) => autor.trim() !== '');
+
+    this.servLivros.incluir({ ...this.livro });
+
+    this.livro = new Livro();
+
+    this.autores = '';
 
     this.router.navigate(['/lista']);
   };

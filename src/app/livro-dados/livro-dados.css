@@ -1,0 +1,29 @@
+.custom-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #7f1d1d;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #2b1215, #3b161b);
+  color: #fecaca;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: fadeSlide 0.25s ease;
+}
+
+.custom-alert i {
+  color: #f87171;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

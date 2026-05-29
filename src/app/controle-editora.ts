@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Editora } from './editora';
 
 @Injectable({
@@ -16,8 +17,8 @@ export class ControleEditora {
   }
 
   getNomeEditora(codEditora: number): string {
-    let editora = this.editoras.filter((e) => e.codEditora == codEditora);
+    const editora = this.editoras.find((editora) => editora.codEditora === codEditora);
 
-    return editora[0].nome;
+    return editora ? editora.nome : '';
   }
 }

@@ -1,16 +1,23 @@
 <main class="container mt-4 page-container">
   <h1 class="page-title">Novo Livro</h1>
+
+  <div *ngIf="mensagemErro" class="custom-alert mt-4">
+    <i class="bi bi-exclamation-triangle-fill"></i>
+
+    <span>{{ mensagemErro }}</span>
+  </div>
+
   <div class="card default-card mt-4">
     <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label class="form-label"> Título </label>
+      <form class="card default-card p-4 mt-4">
+        <div class="mb-4">
+          <label class="form-label">Título</label>
 
           <input type="text" class="form-control" [(ngModel)]="livro.titulo" name="titulo" />
         </div>
 
-        <div class="mb-3">
-          <label class="form-label"> Resumo </label>
+        <div class="mb-4">
+          <label class="form-label">Resumo</label>
 
           <textarea
             class="form-control"
@@ -20,25 +27,27 @@
           ></textarea>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label"> Autores </label>
+        <div class="mb-4">
+          <label class="form-label">Autores</label>
 
           <textarea class="form-control" rows="5" [(ngModel)]="autores" name="autores"></textarea>
 
           <div class="form-text">Um autor por linha</div>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label"> Editora </label>
+        <div class="mb-4">
+          <label class="form-label">Editora</label>
 
           <select class="form-select" [(ngModel)]="livro.codEditora" name="editora">
-            <option *ngFor="let editora of editoras" [value]="editora.codEditora">
+            <option *ngFor="let editora of editoras" [ngValue]="editora.codEditora">
               {{ editora.nome }}
             </option>
           </select>
         </div>
 
-        <button type="button" class="btn btn-dark px-4" (click)="incluir()">Incluir</button>
+        <button type="button" class="btn btn-dark px-4 py-2 modern-submit-btn" (click)="incluir()">
+          Salvar
+        </button>
       </form>
     </div>
   </div>

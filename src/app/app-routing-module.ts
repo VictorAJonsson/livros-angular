@@ -10,12 +10,10 @@ const routes: Routes = [
     redirectTo: '/lista',
     pathMatch: 'full',
   },
-
   {
     path: 'lista',
     component: LivroLista,
   },
-
   {
     path: 'dados',
     component: LivroDados,
